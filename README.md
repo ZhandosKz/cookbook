@@ -1,5 +1,10 @@
 # Mysql
 
+Получение списка юзеров
+```mysql
+select * FROM mysql.user\G
+```
+
 Создание юзера
 ```mysql
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
