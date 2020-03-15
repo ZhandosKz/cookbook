@@ -10,7 +10,10 @@ docker container create --name dummy -v myvolume:/root hello-world
 docker cp c:\myfolder\myfile.txt dummy:/root/myfile.txt
 docker rm dummy
 ```
-
+### Запуск временного контейнера
+```
+docker run --rm -ti -v "$(pwd):/var/www/100hires" image:tag /bin/bash
+```
 # Mysql
 
 Получение списка юзеров
