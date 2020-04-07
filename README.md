@@ -1,3 +1,26 @@
+# Bash
+
+Объявление переменной с дефолтным значением
+```
+variable doesn't exist
+
+$ echo "$VAR1"
+
+$ VAR1="${VAR1:-default value}"
+$ echo "$VAR1"
+default value
+
+variable exists
+
+$ VAR1="has value"
+$ echo "$VAR1"
+has value
+
+$ VAR1="${VAR1:-default value}"
+$ echo "$VAR1"
+has value
+```
+
 # SSH
 ### Генерации base64 файла из файла приватного ключа 
 ```bash
