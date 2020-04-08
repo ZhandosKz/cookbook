@@ -37,6 +37,12 @@ docker rm dummy
 ```
 docker run --rm -ti -v "$(pwd):/var/www/100hires" image:tag /bin/bash
 ```
+
+### Как убить контейнеры по имени
+```
+docker kill $(docker ps | grep selenoid | awk ' {print $1} ')
+```
+
 # Mysql
 
 Получение списка юзеров
