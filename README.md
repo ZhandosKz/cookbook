@@ -60,3 +60,19 @@ CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 CREATE DATABASE my_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 GRANT ALL PRIVILEGES ON * . * TO 'zhandos'@'localhost';
 ```
+
+Получение связей таблиц (в примере для таблицы queue)
+```mysql
+SELECT
+    `TABLE_SCHEMA`,                          -- Foreign key schema
+    `TABLE_NAME`,                            -- Foreign key table
+    `COLUMN_NAME`,                           -- Foreign key column
+    `REFERENCED_TABLE_SCHEMA`,               -- Origin key schema
+    `REFERENCED_TABLE_NAME`,                 -- Origin key table
+    `REFERENCED_COLUMN_NAME`                 -- Origin key column
+FROM
+    `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE`  -- Will fail if user don't have privilege
+WHERE
+        `TABLE_SCHEMA` = SCHEMA()                -- Detect current schema in USE
+  AND `REFERENCED_TABLE_NAME` IS NOT NULL and (TABLE_NAME = 'queue' or REFERENCED_TABLE_NAME='queue');
+```
