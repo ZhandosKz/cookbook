@@ -1,5 +1,42 @@
-# Bash
+# Elasticsearch
 
+### Delete index
+`curl -XDELETE localhost:9200/test_index`
+
+### Create index
+`curl -XPUT localhost:9200/test_index`
+
+### Close and open index before change index settings
+* `curl -XPOST localhost:9200/test_index/_close`
+* `curl -XPOST localhost:9200/test_index/_open`
+
+### Change index settings (sometimes need close index before)
+`curl -XPUT localhost:9200/test_index/_settings`
+
+### Change index mappings
+`curl -XPUT localhost:9200/test_index/_mapping`
+
+### Test built-in analyzers
+```
+curl -XPOST -H "Content-Type: application/json" localhost:9200/_analyze?pretty -d'
+{
+  "analyzer": "english",
+  "text":     "Kauffman The quick brown fox."
+}'
+```
+
+### Test index analyzers
+```
+curl -XPOST -H "Content-Type: application/json" localhost:9200/test_index/_analyze?pretty -d'
+{
+  "analyzer": "autocomplete",
+  "text":     "Kauffman The quick brown fox."
+}'
+```
+
+
+
+# Bash
 Объявление переменной с дефолтным значением
 ```
 variable doesn't exist
@@ -35,7 +72,7 @@ docker rm dummy
 ```
 ### Запуск временного контейнера
 ```
-docker run --rm -ti -v "$(pwd):/var/www/100hires" image:tag /bin/bash
+docker run --rm -ti -v "$(pwd):/var/www" image:tag /bin/bash
 ```
 
 ### Как убить контейнеры по имени
