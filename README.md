@@ -1,3 +1,7 @@
+# Linux
+### Поиск всех ссылок
+`find -L /var/www/ -xtype l`
+
 # Elasticsearch
 
 ### Delete index
