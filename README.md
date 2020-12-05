@@ -1,3 +1,9 @@
+# Certbot
+
+### Зарегать сертфикаты для доменов без участия nginx сервера
+
+`sudo certbot certonly --webroot-path путь-до-открытой-вебу-папки --expand -d example.com -d www.example.com -d subdomain.example.com`
+
 # Linux
 ### Поиск всех ссылок
 `find -L /var/www/ -xtype l`
