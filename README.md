@@ -47,7 +47,7 @@ curl -XPOST -H "Content-Type: application/json" localhost:9200/test_index/_analy
 
 
 # Bash
-Объявление переменной с дефолтным значением
+### Объявление переменной с дефолтным значением
 ```
 variable doesn't exist
 
@@ -67,6 +67,36 @@ $ VAR1="${VAR1:-default value}"
 $ echo "$VAR1"
 has value
 ```
+
+### Присвоение переменной результата логического выражения
+``` bash
+export test_cond_var1='master'
+export test_cond_var2='1'
+```
+***
+Проверка на ИЛИ
+``` bash
+export test_cond_var3=$(expr "$test_cond_var1" == "master" "|" "$test_cond_var2" == "2")
+echo $test_cond_var3
+```
+Выведет 1, т.к. условие `test_cond_var1=='master'` верное
+``` bash
+export test_cond_var3=$(expr "$test_cond_var1" == "mas" "|" "$test_cond_var2" == "2")
+echo $test_cond_var3
+```
+Выведет 0, т.к. ни одно из условий не истино 
+***
+Проверка на И
+``` bash
+export test_cond_var3=$(expr "$test_cond_var1" == "master" "&" "$test_cond_var2" == "2")
+echo $test_cond_var3
+```
+Выведет 0, т.к. одно условий не истино
+``` bash
+export test_cond_var3=$(expr "$test_cond_var1" == "master" "&" "$test_cond_var2" == "1")
+echo $test_cond_var3
+```
+Выведет 1, т.к. все условия истины
 
 # SSH
 ### Генерации base64 файла из файла приватного ключа 
