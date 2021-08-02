@@ -1,3 +1,13 @@
+# Google App scripts
+
+## Установка clasp для локальной разработки
+
+- удаляем старую ноду `sudo apt purge nodejs npm`
+- ставим nvm `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash`
+- перезапускаем терминал и устанавливаем последнею версию ноды nvm install node
+- ставим глобально библиотеку для менеджмента скриптов google app script `sudo npm -g install @google/clasp`
+- авторизуемся в clasp `clasp login`
+
 # Certbot
 
 ### Зарегать сертфикаты для доменов без участия nginx сервера
