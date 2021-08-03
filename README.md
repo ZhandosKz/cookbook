@@ -7,7 +7,8 @@
 - github gmail addon example https://github.com/googleworkspace/add-ons-samples/tree/42d1059ed850003b0de2b859ffd853c2173fa6cc/github
 - cats gmail/docs addon example https://developers.google.com/workspace/add-ons/cats-quickstart
 - gmail app script api https://developers.google.com/apps-script/reference/gmail
-
+- message.getFrom() bug https://stackoverflow.com/questions/59449863/gmail-appscript-mailmessage-getfrom-to-return-email-not-name
+ 
 # Google App scripts
 
 ## Установка clasp для локальной разработки
