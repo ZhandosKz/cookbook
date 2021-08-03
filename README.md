@@ -8,6 +8,7 @@
 - cats gmail/docs addon example https://developers.google.com/workspace/add-ons/cats-quickstart
 - gmail app script api https://developers.google.com/apps-script/reference/gmail
 - message.getFrom() bug https://stackoverflow.com/questions/59449863/gmail-appscript-mailmessage-getfrom-to-return-email-not-name
+- app script widgets https://developers.google.com/apps-script/reference/card-service
  
 # Google App scripts
 
