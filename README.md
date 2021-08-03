@@ -2,8 +2,11 @@
 
 ## Refs 
 
-ui kit https://www.figma.com/community/file/848275628252039675
-
+- ui kit https://www.figma.com/community/file/848275628252039675
+- scopes https://developers.google.com/workspace/add-ons/concepts/gsuite-scopes
+- github gmail addon example https://github.com/googleworkspace/add-ons-samples/tree/42d1059ed850003b0de2b859ffd853c2173fa6cc/github
+- cats gmail/docs addon example https://developers.google.com/workspace/add-ons/cats-quickstart
+- 
 # Google App scripts
 
 ## Установка clasp для локальной разработки
